@@ -5,5 +5,13 @@
 }
 
 .comida-container {
-  /* Estilos para el contenedor de la lista */
+  width: 15vw;
+  aspect-ratio: 1/1;
+  background-color: beige;
+  .card{
+    width: 15vw;
+    aspect-ratio: 1/1;
+  }
+
+ 
 }
