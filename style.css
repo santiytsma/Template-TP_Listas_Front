@@ -54,3 +54,28 @@ body{
 
  
 }
+.addFood{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  label{
+    font-family: "Varela Round", sans-serif;
+
+  }
+
+  .submit{
+    border: none;
+    border-radius: .7vh;
+    width: 7vw;
+    height: 4vh;
+    font-family: "Varela Round", sans-serif;
+
+  }
+  .con{
+    margin-top: 1vh;
+  }
+}
