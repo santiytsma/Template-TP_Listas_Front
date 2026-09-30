@@ -3,14 +3,53 @@
     margin: 0;
     padding: 0px;
 }
+body{
+  background-color: rgb(194, 194, 194);
+}
+.varela-round-regular {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
 .comida-container {
-  width: 15vw;
-  aspect-ratio: 1/1;
-  background-color: beige;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  gap: 2vw;
+  justify-content: center;
+  margin-top: 1vw;
+
   .card{
     width: 15vw;
     aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: .7vw;
+    border: 1px solid rgb(63, 63, 63);
+    font-family: "Varela Round", sans-serif; 
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    
+
+    .categoria{
+      font-size: 1vw;
+      color: rgb(255, 140, 0);
+      font-weight: 800;
+      
+    }
+    .comida{
+      font-weight: 900;
+      
+    }
+    .provincia{
+      font-size: 1vw;
+      color: grey;
+      
+
+    }
   }
 
  
