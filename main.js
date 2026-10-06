@@ -16,22 +16,10 @@ fetch('./data/comidas.json')          // Ruta al archivo JSON
 let comidas = [];
 
 const container = document.getElementById('comidaContainer');
-const formComidaNueva = document.getElementById('agregarComida')
 
-function mostrarComidasFor(){
-  for (let i = 0; i < comidas.length; i++){
-    container.innerHTML +=
-    `
-    <article class="card">
-   <h2 class="comida">${comidas[i].nombre}</h2>
-    <p>${comidas[i].categoria}</p>
-    <p>${comidas[i].provincia}</p>
-    <p>${comidas[i].ingredientes}</p>
-    </article>
-    `
-  }
-}
 function mostrarComidas(){
+  container.innerHTML = '';
+
   comidas.forEach(comida => {
     container.innerHTML +=
     `
@@ -39,11 +27,24 @@ function mostrarComidas(){
     <p class="categoria">${comida.categoria}</p>
     <h2 class="comida">${comida.nombre}</h2>
     <p class="provincia">${comida.provincia}</p>
-    <p>${comida.ingredientes}</p>
     </article>
     `
   })
 }
-formComidaNueva.addEventListener("submit", (e) =>{
-  alert('Comida nueva recibida: '+ e.target.nombre.value)
+//<ul class="ingredientes">${comida.ingredientes.map(ingrediente => `<li>${ingrediente}</li>`).join('')}</ul>
+
+const formComidaNueva = document.getElementById('agregarComida');
+
+formComidaNueva.addEventListener("submit", (event) =>{
+  //alert('Comida nueva recibida: '+ e.target.nombre.value);}
+  event.preventDefault();
+  let nuevaComida ={
+    nombre: event.target.nombre.value,
+    categoria: event.target.Categoría.value,
+    provincia: event.target.provincia.value,
+    ingredientes: '',
+  }
+  comidas.push(nuevaComida);
+
+  mostrarComidas();
 })

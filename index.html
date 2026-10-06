@@ -19,27 +19,31 @@
     </main>     
 
     <section class="addFood">
-      <form id="agregarComida">
-        <div class="con">
-          <label>Nombre de la comida</label>
-          <input type="text" placeholder="Nombre de la comida" name="nombre">
-        </div>
-
-        <div class="con">
-          <label>Categoría</label>
-          <input type="text" placeholder="Categoría">
-        </div>
-
-        <div class="con">
-          <label>Categoría</label>
-          <input type="text" placeholder="Categoría">
-        </div>
-        <div class="con">
-          <button type="submit" class="submit">Agregar Comida</button>
-        </div>
-
-
-      </form>
+      <div class="cuadro">
+        <form id="agregarComida">
+          <div class="con">
+            <label for="nombre">Nombre de la comida</label>
+            <input type="text" placeholder="Nombre de la comida" name="nombre" required>
+          </div>
+  
+          <div class="con">
+            <label for="Categoría">Categoría</label>
+            <input type="text" placeholder="Categoría" name="Categoría" required>
+          </div>
+  
+          <div class="con">
+            <label for="provincia">provincia</label>
+            <input type="text" placeholder="Provincia" name='provincia' required>
+          </div>
+          <div class="con">
+            <label for="ingredientes">Ingredientes</label>
+            <input type="text" placeholder="ingredientes" name="ingredientes" required>
+          </div>
+          <div class="con">
+            <button type="submit" class="submit">Agregar Comida</button>
+          </div>
+        </form>
+      </div>
     </section>
 
     <script type="module" src="./main.js" defer></script>

@@ -45,7 +45,7 @@
     "nombre": "Milanesas a la napolitana",
     "categoria": "Frito",
     "provincia": "Santa Fe",
-    "ingredientes": ["Carne", "Tomate", "Queso", "Jamón", "Orégano"]
+    "ingredientes": ["Carne", "Tomate", "Queso", "Jamón"]
   },
   {
     "nombre": "Matambre a la pizza",
