@@ -34,6 +34,10 @@ body{
     display: flex;
     flex-direction: column;
     gap: 1vw;
+
+    .ingre{
+      margin-left: 4vw;
+    }
     
 
     .categoria{
@@ -70,12 +74,17 @@ body{
   justify-content: center;
 
   .cuadro{
-    margin-top: 4vh;
+    margin-top: 15vh;
     background-color: white;
     width: 28vw;
-    height: 30vh;
+    height: 50vh;
     border-radius: .7vw;
     border: 1px solid ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    
 
 
     label{
@@ -88,6 +97,10 @@ body{
       width: 9vw;
       height: 4vh;
       font-family: "Varela Round", sans-serif;
+      background-color: rgb(255, 140, 0);
+      margin-left: 2vw;
+
+      
   
     }
     .con{

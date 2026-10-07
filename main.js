@@ -27,7 +27,11 @@ function mostrarComidas(){
     <p class="categoria">${comida.categoria}</p>
     <h2 class="comida">${comida.nombre}</h2>
     <p class="provincia">${comida.provincia}</p>
+    <ul class="ingre">
+      ${comida.ingredientes.map(ingrediente => `<li>${ingrediente}</li>`).join('')}
+    </ul>
     </article>
+    
     `
   })
 }
@@ -42,7 +46,7 @@ formComidaNueva.addEventListener("submit", (event) =>{
     nombre: event.target.nombre.value,
     categoria: event.target.Categoría.value,
     provincia: event.target.provincia.value,
-    ingredientes: '',
+    ingredientes: event.target.ingredientes.value.split(","),
   }
   comidas.push(nuevaComida);
 
