@@ -11,13 +11,31 @@
 </head>
 <body>
     <header>
-      <!-- Para filtros y navegacion -->
+      <input type="search" id="buscador" placeholder="Buscar por nombre, provincia o categoría">
+
+      <select id="filtroCategoria">
+        <option value="">Todas las categorias</option>
+        <option value="Parrilla">Parrilla</option>
+        <option value="Horno">Horno</option>
+        <option value="Guiso">Guiso</option>
+        <option value="Frito">Frito</option>
+      </select>
+
+      <select id="filtroProvincia">
+        <option value="">Todas las provincias</option>
+        <option value="Buenos Aires">Buenos Aires</option>
+        <option value="Cordoba">Cordoba</option>
+        <option value="Entre Rios">Entre Rios</option>
+        <option value="Jujuy">Jujuy</option>
+        <option value="Salta">Salta</option>
+        <option value="Santa Fe">Santa Fe</option>
+        <option value="Tucuman">Tucuman</option>
+      </select>
     </header>
 
     <main class="comida-container" id="comidaContainer">
-        <!-- Contenido Dinamico -->
+      
     </main>     
-
     <section class="addFood">
       <div class="cuadro">
         <form id="agregarComida">
@@ -72,6 +90,8 @@
         </form>
       </div>
     </section>
+
+    
 
     <script type="module" src="./main.js" defer></script>
 </body>

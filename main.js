@@ -1,7 +1,7 @@
 /*
     Cargar comidas en memoria desde el JSON
 */
-fetch('./data/comidas.json')          // Ruta al archivo JSON
+fetch('./data/comidas-extended.json')          // Ruta al archivo JSON
   .then(response => response.json())  // Convertir la respuesta en JSON
   .then(data => {                     // Aquí tienes acceso al JSON en formato de objeto JS
     console.log('Comidas cargadas desde JSON:');
@@ -17,10 +17,10 @@ let comidas = [];
 
 const container = document.getElementById('comidaContainer');
 
-function mostrarComidas(){
+function mostrarComidas(lista){
   container.innerHTML = '';
 
-  comidas.forEach(comida => {
+  lista.forEach(comida => {
     container.innerHTML +=
     `
     <article class="card">
@@ -35,7 +35,7 @@ function mostrarComidas(){
     `
   })
 }
-//<ul class="ingredientes">${comida.ingredientes.map(ingrediente => `<li>${ingrediente}</li>`).join('')}</ul>
+
 
 const formComidaNueva = document.getElementById('agregarComida');
 
@@ -50,5 +50,35 @@ formComidaNueva.addEventListener("submit", (event) =>{
   }
   comidas.push(nuevaComida);
 
-  mostrarComidas();
+  mostrarComidas(comidas);
 })
+
+let buscador = document.getElementById('buscador');
+let filtroCategoria = document.getElementById('filtroCategoria');
+let filtroProvincia = document.getElementById('filtroProvincia');
+
+function filtrar(){
+  const comidasFiltradas = comidas.filter(comida => {
+    return comida.categoria.includes(filtroCategoria.value)
+    && comida.provincia.includes(filtroProvincia.value)
+     
+  })
+  mostrarComidas(comidasFiltradas);
+}
+
+
+function buscar(){
+  const texto = buscador.value.toLowerCase()
+
+  const comidasFiltradas = comidas.filter( comida => {
+    return comida.nombre.toLowerCase().includes(texto)
+      ||comida.provincia.toLowerCase().includes(texto)
+      ||comida.categoria.toLowerCase().includes(texto)
+  });
+  mostrarComidas(comidasFiltradas);
+  
+}
+
+filtroCategoria.addEventListener('change', filtrar);
+filtroProvincia.addEventListener('change', filtrar);
+buscador.addEventListener('change', buscar);
