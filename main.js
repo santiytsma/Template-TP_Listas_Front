@@ -26,7 +26,7 @@ function mostrarComidas(lista){
     <article class="card">
     <p class="categoria">${comida.categoria}</p>
     <h2 class="comida">${comida.nombre}</h2>
-    <p class="provincia">${comida.provincia}</p>
+    <p class="provincia">  ${comida.provincia}</p>
     <ul class="ingre">
       ${comida.ingredientes.map(ingrediente => `<li>${ingrediente}</li>`).join('')}
     </ul>
